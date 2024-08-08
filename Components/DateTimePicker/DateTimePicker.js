@@ -17,7 +17,6 @@ function CustomDateTimePicker(props) {
     const dateTimePicker = <DateTimePicker 
         value={props.value} 
         themeVariant="dark"
-        style={styles.calendar}
         onChange={handleDateChange}
         accentColor='dark'
         focusable={true}
@@ -26,7 +25,7 @@ function CustomDateTimePicker(props) {
     return (
         <>
             {Platform.OS === 'ios' && (
-                <View style={styles.calendarView}>
+                <View style={[styles.calendarView,props.style]}>
                     {dateTimePicker}
                 </View>
                 
@@ -59,8 +58,5 @@ const styles = StyleSheet.create({
   },
   calendarViewText: {
     color: 'white'
-  }
-  ,
-  calendar: {
   }
 })
