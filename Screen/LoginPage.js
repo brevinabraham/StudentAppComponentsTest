@@ -1,22 +1,46 @@
 import React from 'react';
 import ViewMainContainer from '../Components/CustomView/ViewMainContainer';
 import ViewMain from '../Components/CustomView/ViewMain';
+import TextH1 from '../Components/CustomText/TextH1'
+import TextH2 from '../Components/CustomText/TextH2'
+import Logo from '../Images/logo'
 
 
 function LoginPage () {
     return(
         <ViewMainContainer>
-            <ViewMain style = {{backgroundColor: 'white'}}>
-
-                
+            <ViewMain style = {{backgroundColor: 'rgba(255,255,255,0)', flex: '1'}}>
+                <TextH1 style={{color:'white'}}>
+                    CONNECT WITH EXPERTS, STUDENTS
+                </TextH1>
+            </ViewMain>
+            <ViewMain style = {{backgroundColor: 'white', flex: '1'}}>
+                <TextH2 style={{color:'black'}}>
+                    LOGO/ NAME
+                </TextH2>
+                <ViewMain>
+                    <Logo/>
+                </ViewMain>
             </ViewMain>
             <ViewMain style = {{backgroundColor: 'white'}}>
-
-                
+                <TextH2 style={{color:'black'}}>
+                    FORM
+                </TextH2>
             </ViewMain>
             <ViewMain style = {{backgroundColor: 'white'}}>
-
-                
+                <TextH2 style={{color:'black'}}>
+                    LOGIN BUTTON
+                </TextH2>
+            </ViewMain>
+            <ViewMain style = {{backgroundColor: 'white'}}>
+                <TextH2 style={{color:'black'}}>
+                    --- OR ---
+                </TextH2>
+            </ViewMain>
+            <ViewMain style = {{backgroundColor: 'white'}}>
+                <TextH2 style={{color:'black'}}>
+                    CREATE ACCOUNT
+                </TextH2>
             </ViewMain>
         </ViewMainContainer>
     )

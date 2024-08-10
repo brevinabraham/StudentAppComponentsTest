@@ -15,6 +15,8 @@ export default TextH1
 
 const styles = StyleSheet.create({
   h1: {
-    fontSize: 26
+    fontSize: 26,
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 })
