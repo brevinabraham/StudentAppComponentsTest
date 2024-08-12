@@ -11,6 +11,8 @@ function CustomTextInput(props) {
                 keyboardType={props.keyboardType}
                 multiline={props.multiline}
                 focusable={true}
+                secureTextEntry={props.secureTextEntry}
+                props
             />
         </View>
     )

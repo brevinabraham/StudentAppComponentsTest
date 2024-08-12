@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: colors.DarkShade,
-    paddingVertical: '10%',
+    paddingBottom: '8%',
+    paddingTop: '12%',
     alignItems: 'center',
     paddingHorizontal: '3%'
   },

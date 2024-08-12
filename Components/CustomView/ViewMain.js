@@ -5,7 +5,7 @@ import colors, { DARK_COLORS } from '../../Utilities/colors';
 function ViewMain(props) {
 
     return(
-        <View style={[styles.container, props.style, {shadowColor: DARK_COLORS[Object.keys(colors).find(key => colors[key] === props.style?.backgroundColor)]}]}>
+        <View style={[styles.container, {shadowColor: DARK_COLORS[Object.keys(colors).find(key => colors[key] === props.style?.backgroundColor)]}, props.style]}>
             {props.children}
         </View>
     )
