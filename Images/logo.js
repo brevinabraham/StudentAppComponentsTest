@@ -4,7 +4,8 @@ import { View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   svg: {
-    flex: 1,
+    width: '170',
+    height: '170',
     alignItems: 'center', 
     justifyContent: 'center',
     aspectRatio: 1
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
 function Logo(props) {
 
     return(
+      <>      
           <Svg viewBox="0 0 100 100" style={[styles.svg, props?.style]}>
             {/* Central Circle */}
             <Circle
@@ -105,6 +107,7 @@ function Logo(props) {
               strokeWidth="2"
             />
           </Svg>
+      </>
     );
 }
 

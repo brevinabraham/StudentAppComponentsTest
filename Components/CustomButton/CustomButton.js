@@ -17,7 +17,7 @@ export default Button
 const styles = StyleSheet.create({
   button: {
     borderRadius: 20,
-    paddingVertical: '3%',
+    paddingVertical: '4%',
     width: '100%',
     alignItems: 'center'
   }

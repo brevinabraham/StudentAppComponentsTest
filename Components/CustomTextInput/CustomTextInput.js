@@ -3,18 +3,18 @@ import { StyleSheet, TextInput, View} from 'react-native'
 
 function CustomTextInput(props) {
     return(
-        <View style={[styles.input, props.style]}>
-            <TextInput
-                onChangeText={props.onChangeText}
-                value={props.value}
-                placeholder={props.placeholder}
-                keyboardType={props.keyboardType}
-                multiline={props.multiline}
-                focusable={true}
-                secureTextEntry={props.secureTextEntry}
-                props
-            />
-        </View>
+        <TextInput
+            onChangeText={props.onChangeText}
+            value={props.value}
+            placeholder={props.placeholder}
+            keyboardType={props.keyboardType}
+            multiline={props.multiline}
+            focusable={true}
+            secureTextEntry={props.secureTextEntry}
+            props
+            style={[styles.input, props.style]}
+            placeholderTextColor={props.style.color}
+        />
     )
 }
 
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: '100%',
     borderRadius: 20,
-    padding: '1.5%',
-    marginVertical: '1%',
+    padding: 12,
+    marginVertical: '2%',
   },
 });
