@@ -53,8 +53,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: '5%',
     borderRadius: 20,
     marginVertical: '1%',
-    backgroundColor: 'rgba(0,0,0,0.7)',//should this me changed later for the color schemes?
-    alignItems: 'center'
+    backgroundColor: 'rgba(0,0,0,0.0)',//should this me changed later for the color schemes?
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    padding: 3
   },
   calendarViewText: {
     color: 'white'

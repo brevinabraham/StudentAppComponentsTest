@@ -4,6 +4,7 @@ import ViewMain from '../CustomView/ViewMain';
 import TextH3 from '../CustomText/TextH3';
 import CustomTextInput from '../CustomTextInput/CustomTextInput';
 import colors, { DARK_COLORS } from '../../Utilities/colors';
+import LoadingSpinner from '../../Images/LoadingSpinner';
 
 function LoginForm(props) {
     const [loginCred, setLoginCred] = useState({ email: '', password: '' });
@@ -44,13 +45,14 @@ function LoginForm(props) {
         const isValid = Object.keys(errors).length === 0;
         setIsFormValid(isValid);
 
-        handleCheck(isValid);
+        handleCheck(isValid)
     };
 
     const handleCheck = (isValid) => {
         if (isValid) {
             console.log('Form submitted successfully!');
             setShowInfoErr(false);
+            props.FormValid(isValid)
         } else {
             console.log('Form has errors. Please correct them.');
             setShowInfoErr(true);
@@ -95,6 +97,7 @@ function LoginForm(props) {
                     {err.password}
                 </TextH3>
             )}
+
         </View>
     );
 }
