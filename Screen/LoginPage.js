@@ -17,6 +17,9 @@ function LoginPage ({navigation}) {
     const handleLogIn = () => {
         setIsLoading(!isLoading)
         setLoginBtnText(isLoading ? 'LOG in' : 'BACK')
+        setTimeout(() => {
+            navigation.navigate('Dashboard')
+        }, 2000);
     }
 
     return(

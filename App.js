@@ -2,8 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import screens from './Screen/index';
-import CustomButton from './Components/CustomButton/CustomButton'
+import screens from './Screen/index';     
 
 const Stack = createNativeStackNavigator()
 
@@ -18,6 +17,10 @@ export default function App() {
         <Stack.Screen
             name='SignUpPage'
             component={screens.SignUpPage}
+            options={{headerShown: false}}/>
+        <Stack.Screen
+            name='Dashboard'
+            component={screens.Dashboard}
             options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>

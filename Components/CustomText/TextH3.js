@@ -5,7 +5,7 @@ import colors, { DARK_COLORS } from '../../Utilities/colors';
 function TextH3 (props){
 
     return(
-        <Text style={[styles.h3, props.style]}>
+        <Text style={[styles.h3, props.style]} onPress={props.onPress}>
             {props.children}
         </Text>
     )

@@ -5,7 +5,7 @@ import colors, { DARK_COLORS } from '../../Utilities/colors';
 function ViewMain(props) {
 
     return(
-        <View style={[styles.container, {shadowColor: DARK_COLORS[Object.keys(colors).find(key => colors[key] === props.style?.backgroundColor)]}, props.style]}>
+        <View style={[styles.container, {shadowColor: DARK_COLORS[Object.keys(colors).find(key => colors[key] === props.style?.backgroundColor)]}, props.style]} onTouchStart={props.onTouchStart}>
             {props.children}
         </View>
     )

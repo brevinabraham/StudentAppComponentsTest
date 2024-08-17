@@ -10,7 +10,7 @@ function ViewMainContainer(props) {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height' } 
         >
           <ScrollView 
-              contentContainerStyle={styles.scrollViewContent} 
+              contentContainerStyle={[styles.scrollViewContent, props?.scrollViewContentStyle]} 
               style={[styles.container, props.style]}
           >
             <View style={styles.centeredContent}>

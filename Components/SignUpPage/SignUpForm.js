@@ -45,7 +45,7 @@ function SignUpForm(props) {
                     borderColor: props?.inputStyle?.borderColor,
                     color: props?.inputStyle?.color,
                 }}
-                placeholder={'First Name'}
+                placeholder={'example@email.com'}
                 value={false}
                 onChangeText={false}
             />
@@ -58,7 +58,7 @@ function SignUpForm(props) {
                     borderColor: props?.inputStyle?.borderColor,
                     color: props?.inputStyle?.color,
                 }}
-                placeholder={'First Name'}
+                secureTextEntry={true}
                 value={false}
                 onChangeText={false}
             />
@@ -71,7 +71,7 @@ function SignUpForm(props) {
                     borderColor: props?.inputStyle?.borderColor,
                     color: props?.inputStyle?.color,
                 }}
-                placeholder={'First Name'}
+                secureTextEntry={true}
                 value={false}
                 onChangeText={false}
             />

@@ -6,9 +6,11 @@ import colors from '../Utilities/colors';
 import TextH1 from '../Components/CustomText/TextH1';
 import SignUpForm from '../Components/SignUpPage/SignUpForm';
 import TextH3 from '../Components/CustomText/TextH3';
-import CheckBox from '@react-native-community/checkbox';
+import { CheckBox } from "react-native-btr";
+import Button from '../Components/CustomButton/CustomButton';
 
-function SignUp () {
+
+function SignUp ({navigation}) {
     const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
     return(
@@ -24,17 +26,13 @@ function SignUp () {
             <ViewMain style={{marginVertical: '3%', paddingVertical: '3%', backgroundColor: colors.MainColor, paddingHorizontal: '5%'}}>
                 <SignUpForm FormValid={null} textStyle={{color: colors.DarkShade}} inputStyle={{color: colors.DarkShade, borderColor: colors.DarkShade}}/>
             </ViewMain>
-            <ViewMain style={{flex: 1, flexDirection: 'column'}}>
-                <CheckBox disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={(newValue) => setToggleCheckBox(newValue)}/>
+            <ViewMain style={{flex: 1, flexDirection: 'row', justifyContent: 'space-evenly'}} onTouchStart={()=>setToggleCheckBox(!toggleCheckBox)}>
+                <CheckBox checked={toggleCheckBox} color={colors.MainColor} />
                 <TextH3 style={{color: colors.MainColor}}>
-                    do you agree?
+                    {'Do you agree to the terms and conditions?'}
                 </TextH3>
             </ViewMain>
-            <ViewMain style={{flex: 1}}>
-                
-            </ViewMain>
+            <Button style={{marginVertical: '5%', backgroundColor: colors.MainColor }} label={"CREAT ACCOUNT"} labelStyle={{color: colors.DarkShade}} onPress={()=>navigation.navigate('LoginPage' )}/>
         </ViewMainContainer>
     )
 }
