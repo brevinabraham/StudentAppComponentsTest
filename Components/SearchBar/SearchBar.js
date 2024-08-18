@@ -10,7 +10,7 @@ function SearchBar (props) {
 
     const toggleSearchBar = () => {
         Animated.timing(widthAnim, {
-            toValue: expanded ? Dimensions.get('window').width: 70,
+            toValue: expanded ? Dimensions.get('window').width: 50,
             duration: 200,
             easing: Easing.ease,
             useNativeDriver: false
@@ -35,22 +35,20 @@ function SearchBar (props) {
                         <Logo shade={colors.DarkShade} style={{ height: 50, width: 50 }} />
                     </View>
                 </TouchableWithoutFeedback>
-                {expanded && (
-                    <View style={[styles.searchContainer, props?.searchContainer]}>
-                        <SearchIcon style={styles.icon} stroke={colors.DarkShade} />
-                        <TextInput 
-                            onChangeText={props.onChangeText}
-                            value={props.value}
-                            placeholder={'Search here ...'}
-                            keyboardType={props.keyboardType}
-                            multiline={props.multiline}
-                            focusable={true}
-                            secureTextEntry={props.secureTextEntry}
-                            style={[styles.input, props.inputStyle]}
-                            placeholderTextColor={props.style?.color}
-                        />
-                    </View>
-                )}
+                <View style={[styles.searchContainer, props?.searchContainer]}>
+                    <SearchIcon style={styles.icon} stroke={colors.DarkShade} />
+                    <TextInput 
+                        onChangeText={props.onChangeText} 
+                        value={props.value}
+                        placeholder={'Search here ...'}
+                        keyboardType={props.keyboardType}
+                        multiline={props.multiline}
+                        focusable={true}
+                        secureTextEntry={props.secureTextEntry}
+                        style={[styles.input, props.inputStyle]}
+                        placeholderTextColor={props.style?.color}
+                    />
+                </View>
             </Animated.View>
         </KeyboardAvoidingView>
     );
@@ -65,7 +63,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 20,
-        paddingHorizontal: 10, 
     },
     searchContainer: {
         flex: 1,
@@ -73,13 +70,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 20,
         marginLeft: 10,
+        paddingRight: 2
     },
     icon: {
         width: 15,
         height: 15,
         marginLeft: 10,
         position: 'absolute',
-        zIndex: 1,
     },
     input: {
         flex: 1,
