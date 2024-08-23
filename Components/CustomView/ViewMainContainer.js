@@ -12,6 +12,7 @@ function ViewMainContainer(props) {
           <ScrollView 
               contentContainerStyle={[styles.scrollViewContent, props?.scrollViewContentStyle]} 
               style={[styles.container, props.style]}
+              onScroll={props.onScroll}
           >
             <View style={styles.centeredContent}>
               {props.children}
