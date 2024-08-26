@@ -14,9 +14,8 @@ function Dashboard({ navigation }) {
 
     const handleScroll = (event) => {
         const currentScrollY = event.nativeEvent.contentOffset.y;
-        console.log(currentScrollY)
         if (currentScrollY > 0 && !isSearchBarCollapsed) {
-            searchBarRef.current.collapseSearchBar(); // Collapse the search bar on scroll
+            searchBarRef.current.collapseSearchBar(); 
             setIsSearchBarCollapsed(true);
         } else if (currentScrollY <= 0 && isSearchBarCollapsed) {
             searchBarRef.current.expandSearchBar();
@@ -34,10 +33,11 @@ function Dashboard({ navigation }) {
                 <ViewMain>
                     <AspectRatioCard
                         title="Title: 16:9"
-                        imageUrl="https://via.placeholder.com/300"
                         name="John Doe"
                         dateTime="12 Aug 2024"
                         ratio={16/9}  // Image card with 16:9 aspect ratio
+                        audio={true}
+                        containerStyle={{backgroundColor: colors.MainColor}}
                     />
                 </ViewMain>
                 <ViewMain>
@@ -46,7 +46,7 @@ function Dashboard({ navigation }) {
                         content="This is a text-only card designed for displaying short messages or announcements."
                         name="Admin"
                         dateTime="18 Aug 2024"
-                        ratio={4}  // Use a higher ratio for text-only cards
+                        ratio={3}  // Use a higher ratio for text-only cards
                     />
                 </ViewMain>
                 <ViewMain>
