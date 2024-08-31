@@ -13,6 +13,7 @@ function ViewMainContainer(props) {
               contentContainerStyle={[styles.scrollViewContent, props?.scrollViewContentStyle]} 
               style={[styles.container, props.style]}
               onScroll={props.onScroll}
+              refreshControl={props.refreshControl}
           >
             <View style={styles.centeredContent}>
               {props.children}
@@ -29,7 +30,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: colors.DarkShade,
-    paddingHorizontal: '3%',
   },
   scrollViewContent: {
     flexGrow: 1, 
