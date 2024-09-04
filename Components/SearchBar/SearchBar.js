@@ -52,14 +52,14 @@ const SearchBar = forwardRef((props, ref)=> {
                 styles.container,
                 {
                     width: widthAnim,
-                    backgroundColor: expanded ? colors.MainColor : colors.MainColor,
+                    backgroundColor: expanded ? colors.LightShade : colors.DarkShade,
                     opacity: opacityAnim 
                 },
                 props.style
             ]}>
                 <TouchableWithoutFeedback onPress={toggleSearchBar}>
                     <View>
-                        <Logo shade={colors.DarkShade} style={{ height: 50, width: 50 }} />
+                        <Logo shade={expanded ? colors.DarkShade : colors.LightShade} style={{ height: 50, width: 50 }} />
                     </View>
                 </TouchableWithoutFeedback>
                 {expanded && (

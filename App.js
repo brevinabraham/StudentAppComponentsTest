@@ -22,6 +22,10 @@ export default function App() {
             name='Dashboard'
             component={screens.Dashboard}
             options={{headerShown: false}}/>
+        <Stack.Screen
+            name='AddQuestion'
+            component={screens.AddQuestion}
+            options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

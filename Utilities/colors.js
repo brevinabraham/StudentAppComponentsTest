@@ -1,17 +1,17 @@
 export default COLORS = {
-  LightShade: '#F3F7F7', //Light shade
+  LightShade: '#E8F6F3', //Light shade
   LightAccent: '#94C4CF', //Light accent
   MainColor: '#F0A456', //Main brand color
   DarkAccent: '#AE415C', //Dark accent
-  DarkShade: '#384669' //Dark shade
+  DarkShade: '#2C3E50' //Dark shade
 };
 
 export const DARK_COLORS = {
-  DarkShade: '#F3F7F7', //Light shade
+  DarkShade: '#E8F6F3', //Light shade
   DarkAccent: '#94C4CF', //Light accent
   MainColor: '#F0A456', //Main brand color
   LightAccent: '#AE415C', //Dark accent
-  LightShade: '#384669' //Dark shade
+  LightShade: '#2C3E50' //Dark shade
 };
 
 // B0C9BD

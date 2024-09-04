@@ -8,6 +8,7 @@ import Button from '../Components/CustomButton/CustomButton';
 import LoginForm from '../Components/LoginPage/LoginForm';
 import colors from '../Utilities/colors';
 import LoadingSpinner from '../Images/LoadingSpinner';
+import { CommonActions } from '@react-navigation/native';
 
 function LoginPage ({navigation}) {
     const [isLoading, setIsLoading] = useState(false)
@@ -18,12 +19,12 @@ function LoginPage ({navigation}) {
         setIsLoading(!isLoading)
         setLoginBtnText(isLoading ? 'LOG in' : 'BACK')
         setTimeout(() => {
-            navigation.navigate('Dashboard')
+            navigation.dispatch(CommonActions.reset({index: 0, routes: [{name:'Dashboard'}]} ))
         }, 2000);
     }
 
     return(
-        <ViewMainContainer>
+        <ViewMainContainer style={{backgroundColor: colors.LightShade}}>
             <ViewMain style = {{backgroundColor: 'rgba(0,0,0,0)'}}>
                 <TextH1 style={{color: colors.MainColor}}>
                     S T U D I

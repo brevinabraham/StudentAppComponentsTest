@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#eff',
         padding: 10,
         width: '100%',
+        marginBottom: 10
     },
     scrollView: {
         flexGrow: 1,
