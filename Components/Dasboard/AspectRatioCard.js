@@ -13,7 +13,7 @@ function AspectRatioCard(props) {
     const content = Array.isArray(props.content) ? props.content : props.content ? [props.content] : [];
     const totalItems = images.length + content.length + (props.audio ? 1 : 0);
     const [activeIndex, setActiveIndex] = useState(0);
-    const cardContentWidth = screenWidth*0.95
+    const cardContentWidth = screenWidth*0.96
 
     return (
         <View style={[styles.container, props.containerStyle]}>

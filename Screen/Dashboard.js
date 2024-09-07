@@ -51,7 +51,7 @@ function Dashboard({ navigation }) {
                 />
                 
                 <AspectRatioCard
-                    title="Announcement"
+                    title="Title 1"
                     content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utyjkgyjhugyuk labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi uttyhtghj aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum,quis nostrud exercitation ullamco laboris nisi uttyhtghj aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumelit, sed do eiusmod tempor incididunt utyjkgyjhugyuk labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi uttyhtghj aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum,quis nostrud exercitation ullamco laboris nisi uttyhtghj aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumelit, sed do eiusmod tempor incididunt utyjkgyjhugyuk labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi uttyhtghj aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum,quis nostrud exercitation ullamco laboris nisi uttyhtghj aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
                     imageUrl={["https://picsum.photos/500", "https://picsum.photos/1900/2000"]}
                     name="Admin"
@@ -62,7 +62,7 @@ function Dashboard({ navigation }) {
             
             
                 <AspectRatioCard
-                    title="Another Title"
+                    title="Title 4/3"
                     imageUrl={["https://picsum.photos/500/300", "https://picsum.photos/200/300", "https://picsum.photos/600/300"]}
                     content={["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum","testing this works?"]}
                     name="Jane Smith"
@@ -73,7 +73,7 @@ function Dashboard({ navigation }) {
             
             
                 <AspectRatioCard
-                    title="Another Title"
+                    title="Title 3"
                     imageUrl="https://picsum.photos/800/900"
                     name="Jane Smith"
                     dateTime="15 Aug 2024"
@@ -82,7 +82,7 @@ function Dashboard({ navigation }) {
                 />
 
                 <AspectRatioCard
-                    title="Another Title"
+                    title="Title 16/9"
                     content={["Lorem ipsum occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum","testing this works?", "testing this works? occaecat cupidatat non proident, sunt in culpa qui off"]}
                     imageUrl="https://picsum.photos/2800/2020"
                     name="Jane Smith"

@@ -21,7 +21,7 @@ const SearchBar = forwardRef((props, ref)=> {
     const setExpandedState = (shouldExpand) => {
         Animated.parallel([
             Animated.timing(widthAnim, {
-                toValue: shouldExpand ? 50 : Dimensions.get('window').width,
+                toValue: shouldExpand ? 58 : Dimensions.get('window').width,
                 duration: 200,
                 easing: Easing.ease,
                 useNativeDriver: false
@@ -58,7 +58,7 @@ const SearchBar = forwardRef((props, ref)=> {
                 props.style
             ]}>
                 <TouchableWithoutFeedback onPress={toggleSearchBar}>
-                    <View>
+                    <View style={{paddingLeft: 6}}>
                         <Logo shade={expanded ? colors.DarkShade : colors.LightShade} style={{ height: 50, width: 50 }} />
                     </View>
                 </TouchableWithoutFeedback>
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 20,
-        marginLeft: 10,
+        marginLeft: 5,
         paddingRight: 2
     },
     icon: {

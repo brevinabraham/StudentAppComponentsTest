@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, TextInput, View} from 'react-native'
+import colors from '../../Utilities/colors';
 
 function CustomTextInput(props) {
     return(
@@ -11,9 +12,9 @@ function CustomTextInput(props) {
             multiline={props.multiline}
             focusable={true}
             secureTextEntry={props.secureTextEntry}
-            props
+            numberOfLines = {props.numberOfLines}
             style={[styles.input, props.style]}
-            placeholderTextColor={props.style.color}
+            placeholderTextColor={colors.LightShade}
         />
     )
 }
@@ -27,5 +28,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 12,
     marginVertical: '2%',
+    minHeight: 'auto',
   },
 });
