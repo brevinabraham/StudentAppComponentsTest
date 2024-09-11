@@ -20,7 +20,7 @@ function LoginPage ({navigation}) {
         setLoginBtnText(isLoading ? 'LOG in' : 'BACK')
         setTimeout(() => {
             navigation.dispatch(CommonActions.reset({index: 0, routes: [{name:'Dashboard'}]} ))
-        }, 2000);
+        }, 1000);
     }
 
     return(

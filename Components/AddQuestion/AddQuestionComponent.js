@@ -4,31 +4,38 @@ import CustomTextInput from '../CustomTextInput/CustomTextInput';
 import colors from '../../Utilities/colors';
 import ViewMain from '../CustomView/ViewMain';
 import Add from '../../Images/Add';
+import Eyes from '../../Images/Eyes';
 
 function AddQuestionComponent({ title, inputType = 'default', multiline = false, inputStyles, numberOfLinesPass = 1, aspectRatios = []}) {
     const [uploadImages, setUploadImages] = useState(0)
     const [imagesArray, setImagesArray] = useState([])
-    const [selectedAspectRatio, setSelectedAspectRatio] = useState({})
+    const [selectedAspectRatio, setSelectedAspectRatio] = useState(aspectRatios.map(() => false))
     const handleImagePressed = () => {
         setUploadImages(uploadImages + 1)
         setImagesArray([...imagesArray,(<ViewMain style={[styles.imageUpload]} key ={uploadImages} onTouchStart={handleImagePressed}>
-                        <Text> {uploadImages} </Text>
+                        <Text style={{color: colors.LightShade}}> {uploadImages} </Text>
                     </ViewMain>)])
     }
-    const handleSelectedAspectRatio = () => {
-        setSelectedAspectRatio(!selectedAspectRatio)
-        console.log(selectedAspectRatio)
+    const handleSelectedAspectRatio = (index) => {
+        setSelectedAspectRatio(prevState => {
+            const updatedState = prevState.map(()=> false);
+            updatedState[index] = !updatedState[index];
+            return updatedState;
+        });
     }
-    useEffect(()=>{
-        for (let i = 0; i < aspectRatios.length; i++){
-            console.log(i)
-            setSelectedAspectRatio({...selectedAspectRatio, i : false})
-            console.log(selectedAspectRatio)
-        }
-    }, [])
+    const handleEyePressed = () => {
+        console.log('eye pressed')
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
+            {inputType == 'cardAspectRatio' && (
+                <ViewMain style={{position: 'absolute', left: '47.5%'}} onTouchStart={handleEyePressed}>
+                    <Eyes fill = {colors.LightShade}/>
+                </ViewMain>
+                )
+            }
+            
             {inputType == 'default' && (
                 <CustomTextInput
                     style={[styles.input, inputStyles]}
@@ -53,8 +60,8 @@ function AddQuestionComponent({ title, inputType = 'default', multiline = false,
             {inputType == 'cardAspectRatio' && (
                 <View style={styles.imageUploadContainer}>
                     {aspectRatios.map((aspect, index)=> (
-                        <ViewMain style={[styles.imageUpload, { width: 'auto',aspectRatio: aspect, backgroundColor: selectedAspectRatio? colors.LightShade : colors.DarkShade}]} onTouchStart={handleSelectedAspectRatio}>
-                            <Text style={{color: selectedAspectRatio? colors.DarkShade : colors.LightShade}}>
+                        <ViewMain style={[styles.imageUpload, { width: 'auto',aspectRatio: aspect, backgroundColor: selectedAspectRatio[index] ? colors.LightShade : colors.DarkShade}]} onTouchStart={() => handleSelectedAspectRatio(index)} key={index}>
+                            <Text style={{color: selectedAspectRatio[index] ? colors.DarkShade : colors.LightShade}}>
                                 {index}
                             </Text>
                         </ViewMain>

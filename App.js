@@ -26,6 +26,10 @@ export default function App() {
             name='AddQuestion'
             component={screens.AddQuestion}
             options={{headerShown: false}}/>
+        <Stack.Screen
+            name='OnlineChats'
+            component={screens.OnlineChats}
+            options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

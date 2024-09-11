@@ -26,7 +26,7 @@ function AddQuestion ({navigation}) {
                     </View>
                 </TouchableNativeFeedback>
                 <TextH1 style={{flex: 1, color: colors.DarkShade}} >
-                    Add Questions
+                    ADD QUESTIONS
                 </TextH1>
             </View>
             <ViewMain style={styles.mainSection}>
