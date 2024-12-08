@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@10play/tentap-editor": "^0.5.21",
     "@react-native-community/datetimepicker": "^8.2.0",
     "@react-native-community/slider": "^4.5.2",
     "@react-navigation/native": "^6.1.18",
@@ -18,7 +19,8 @@
     "react": "18.2.0",
     "react-native": "0.74.3",
     "react-native-btr": "^2.2.1",
-    "react-native-svg": "^15.5.0"
+    "react-native-svg": "^15.5.0",
+    "react-native-webview": "13.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

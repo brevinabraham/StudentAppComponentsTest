@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewMainContainer from '../Components/CustomView/ViewMainContainer';
-import { StyleSheet, TouchableNativeFeedback, View} from 'react-native';
+import { StyleSheet, TouchableNativeFeedback, useWindowDimensions, View} from 'react-native';
 import colors from '../Utilities/colors';
 import AngleLeft from '../Images/AngleLeft';
 import TextH1 from '../Components/CustomText/TextH1';
@@ -28,13 +28,13 @@ function OnlineChats ({navigation}) {
                 </ViewMain>
             </View>
 
-            <ViewMainContainer style={styles.mainContainer}>
+            <ViewMainContainer style={styles.mainContainer} scrollViewContentStyle={{height: useWindowDimensions().height*0.70}}>
                 <TextH1>
                     main content
                 </TextH1>
             </ViewMainContainer>
-            <View style={{width:'100%'}}>
-                <CustomTextInput />
+            <View style={{width:'100%', maxHeight: 150, flexGrow: 1}}>
+                <CustomTextInput multiline = {true} sendPaperPlane={true} numberOfLines={2}/>
             </View>
         </ViewMainContainer>
     )
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.LightShade,
         paddingHorizontal: '2%',
         paddingTop: '6%',
-        height: '98%'
+        height: '98%',
     },
     header: {
         flexDirection: 'row',
@@ -73,8 +73,9 @@ const styles = StyleSheet.create({
     mainContainer :{
         borderColor: colors.DarkShade,
         borderWidth: 1,
-        minHeight: '99%',
+        Height: '99%',
         backgroundColor: colors.LightShade,
-        borderRadius: 20
+        borderRadius: 20,
+        flexShrink: 1
     }
 })
