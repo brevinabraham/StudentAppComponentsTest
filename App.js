@@ -30,6 +30,10 @@ export default function App() {
             name='OnlineChats'
             component={screens.OnlineChats}
             options={{headerShown: false}}/>
+        <Stack.Screen
+            name='AccountProfile'
+            component={screens.AccountProfile}
+            options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

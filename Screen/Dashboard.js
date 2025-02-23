@@ -92,7 +92,7 @@ function Dashboard({ navigation }) {
                 />
             
             </ViewMainContainer>
-            <NavigationBar addOnPress={()=>navigation.navigate('AddQuestion')} chatsOnPress={()=>navigation.navigate('OnlineChats')}/>
+            <NavigationBar addOnPress={()=>navigation.navigate('AddQuestion')} chatsOnPress={()=>navigation.navigate('OnlineChats')} accountOnPress={()=> navigation.navigate('AccountProfile')}/>
         </View>
     );
 }
