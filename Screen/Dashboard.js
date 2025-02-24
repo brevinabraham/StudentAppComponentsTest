@@ -38,7 +38,7 @@ function Dashboard({ navigation }) {
                 <SearchBar ref={searchBarRef} onChangeText={setMessage}  />
             </View>
 
-            <ViewMainContainer onScroll={handleScroll} scrollViewContentStyle={{ justifyContent: 'flex-start', paddingTop: '30%'}} 
+            <ViewMainContainer onScroll={handleScroll} scrollViewContentStyle={{ justifyContent: 'flex-start', paddingTop: '30%', paddingBottom: '15%'}} 
             refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>} style={styles.container}>
                
                 <AspectRatioCard
