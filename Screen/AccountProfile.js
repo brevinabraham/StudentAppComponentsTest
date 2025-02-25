@@ -8,6 +8,8 @@ import Button from '../Components/CustomButton/CustomButton';
 import AngleLeft from '../Images/AngleLeft';
 import AddQuestionComponent from '../Components/AddQuestion/AddQuestionComponent';
 import SaveIcon from '../Images/SaveIcon';
+import AspectRatioCardSummary from '../Components/AspectRatioCard/AspectRatioCardSunnary';
+import TextH2 from '../Components/CustomText/TextH2';
 
 function AccountProfile ({navigation}) {
     const [saved, setSaved] = useState(false)
@@ -28,6 +30,7 @@ function AccountProfile ({navigation}) {
                         </TextH1>
                     </View>
                 </TouchableNativeFeedback>
+                
             </View>
             <ViewMain style={styles.mainSection}>
                 <View style={{width: '100%', alignSelf: 'center'}}>
@@ -49,8 +52,20 @@ function AccountProfile ({navigation}) {
                     Questions
                 </TextH1>
                 <ViewMain style={styles.mainSection}>
-                    <AddQuestionComponent title="Email"/>
-                    <AddQuestionComponent title="Change Password" />
+                    <ViewMain style = {{borderWidth: 2, borderColor: 'black'}}>
+                        <TextH2>
+                            POSTED
+                        </TextH2>
+                        <AspectRatioCardSummary title={'test title'} content={'test for content lorem lorem proeoepro lorem lorem lorem pro pro pro prolorem lorem proeoepro lorem lorem lorem pro pro pro prolorem lorem proeoepro lorem lorem lorem pro pro pro pro'}/>
+                        <AspectRatioCardSummary title={'title 2'} content={'test for content lorem lorem proeoepro lorem lorem lorem pro pro pro prolorem lorem proeoepro lorem lorem lorem pro pro pro prolorem lorem proeoepro lorem lorem lorem pro pro pro pro'}/>
+                    </ViewMain>
+                    <ViewMain style = {{borderWidth: 2, borderColor: 'black'}}>
+                        <TextH2>
+                            Saved
+                        </TextH2>
+                        <AspectRatioCardSummary title={'not sure yet'} content={'torem pro pro pro prolorem lorem prem lorem lorem pro pro pro prolorem lorem proeoepro lorem lorem lorem pro pro pro pro'} actionVisibility = {false}/>
+                        <AspectRatioCardSummary title={'wth?'} content={'test for content lorem lorem pr'} actionVisibility = {false}/>
+                    </ViewMain>
                 </ViewMain>
             </View>
             
@@ -79,7 +94,7 @@ const styles = StyleSheet.create({
     },
     mainSection:{
         paddingVertical: '1%',
-        paddingHorizontal: '5%',
+        paddingHorizontal: '3%',
         backgroundColor: colors.MainColor,
     }
 })

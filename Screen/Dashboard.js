@@ -5,7 +5,7 @@ import ViewMain from '../Components/CustomView/ViewMain';
 import TextH1 from '../Components/CustomText/TextH1';
 import SearchBar from '../Components/SearchBar/SearchBar';
 import colors from '../Utilities/colors';
-import AspectRatioCard from '../Components/Dasboard/AspectRatioCard';
+import AspectRatioCard from '../Components/AspectRatioCard/AspectRatioCard';
 import NavigationBar from '../Components/NavigationBar/NavigationBar';
 
 function Dashboard({ navigation }) {
