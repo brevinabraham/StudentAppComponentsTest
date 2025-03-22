@@ -8,7 +8,7 @@ import Button from '../Components/CustomButton/CustomButton';
 import AngleLeft from '../Images/AngleLeft';
 import AddQuestionComponent from '../Components/AddQuestion/AddQuestionComponent';
 import SaveIcon from '../Images/SaveIcon';
-import AspectRatioCardSummary from '../Components/AspectRatioCard/AspectRatioCardSunnary';
+import AspectRatioCardSummary from '../Components/AspectRatioCard/AspectRatioCardSummary';
 import TextH2 from '../Components/CustomText/TextH2';
 
 function AccountProfile ({navigation}) {
