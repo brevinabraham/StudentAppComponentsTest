@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewMainContainer from '../Components/CustomView/ViewMainContainer';
-import { KeyboardAvoidingView, ScrollView, StyleSheet, TouchableNativeFeedback, useWindowDimensions, View} from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TouchableNativeFeedback, useWindowDimensions, View} from 'react-native';
 import colors from '../Utilities/colors';
 import AngleLeft from '../Images/AngleLeft';
 import TextH1 from '../Components/CustomText/TextH1';
@@ -10,7 +10,7 @@ import CustomTextInput from '../Components/CustomTextInput/CustomTextInput';
 
 function OnlineChats ({navigation}) {
     return(
-        <KeyboardAvoidingView style={styles.container}>
+        <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
            <View style={styles.header}>
                 <TouchableNativeFeedback onPress={()=>navigation.goBack()}>
                     <View>
@@ -34,13 +34,13 @@ function OnlineChats ({navigation}) {
                     </TextH1>
                 </ScrollView>
             </View> */}
-
-            <ViewMainContainer style={styles.mainContainer} scrollViewContentStyle={{height: useWindowDimensions().height*0.70}}>
+            
+            <ViewMainContainer style={styles.mainContainer}>
                 <TextH1>
                     main content
                 </TextH1>
             </ViewMainContainer>
-            <View style={{width:'100%', maxHeight: 150, flex: 1}}>
+            <View style={{width:'100%', maxHeight: 150}}>
                 <CustomTextInput multiline = {true} sendPaperPlane={true} numberOfLines={2}/>
             </View>
         </KeyboardAvoidingView>
@@ -80,9 +80,8 @@ const styles = StyleSheet.create({
     mainContainer :{
         borderColor: colors.DarkShade,
         borderWidth: 1,
-        Height: '99%',
         backgroundColor: colors.LightShade,
         borderRadius: 20,
-        flexShrink: 1
+        flex: 1
     }
 })
