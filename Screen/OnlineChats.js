@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ViewMainContainer from '../Components/CustomView/ViewMainContainer';
-import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TouchableNativeFeedback, useWindowDimensions, View} from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, TouchableNativeFeedback, View} from 'react-native';
 import colors from '../Utilities/colors';
 import AngleLeft from '../Images/AngleLeft';
 import TextH1 from '../Components/CustomText/TextH1';
 import ViewMain from '../Components/CustomView/ViewMain';
 import TextH3 from '../Components/CustomText/TextH3';
 import CustomTextInput from '../Components/CustomTextInput/CustomTextInput';
+import ChatBubble from '../Components/CustomView/ChatBubble';
 
 function OnlineChats ({navigation}) {
+    const [ChatInformation, setChatInformation] = useState({chatStlye:'',message:''})
+    const [Chats, setChats] = useState([])
+
+
     return(
         <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
            <View style={styles.header}>
@@ -35,13 +40,46 @@ function OnlineChats ({navigation}) {
                 </ScrollView>
             </View> */}
             
-            <ViewMainContainer style={styles.mainContainer}>
-                <TextH1>
-                    main content
-                </TextH1>
+            <ViewMainContainer style={styles.mainContainer} scrollViewContentStyle={styles.scrollViewStyling} scrollToEndBool={true}>
+                <ChatBubble styleOption = {1}>
+                    empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </ChatBubble>
+                <ChatBubble styleOption = {2}>
+                    empor incidi
+                </ChatBubble>
+                <ChatBubble styleOption = {1}>
+                    empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </ChatBubble>
+                <ChatBubble styleOption = {2}>
+                    empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </ChatBubble>
+                <ChatBubble styleOption = {2}>
+                    empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </ChatBubble>
+                <ChatBubble styleOption = {1}>
+                    empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitato consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </ChatBubble>
+                <ChatBubble styleOption = {1}>
+                    elore eu fugiat nulla pariatur.
+                </ChatBubble>
+                {Chats.map((chat, index) => (
+                    <ChatBubble key={index} styleOption={chat.chatStlye} onTouchStart={()=>console.log(chat.message)}>
+                        {chat.message}
+                    </ChatBubble>
+                ))}
             </ViewMainContainer>
             <View style={{width:'100%', maxHeight: 150}}>
-                <CustomTextInput multiline = {true} sendPaperPlane={true} numberOfLines={2}/>
+                <CustomTextInput multiline = {true} sendPaperPlane={true} numberOfLines={2}
+                value={ChatInformation.message}
+                onChangeText={(text) => setChatInformation(prevState => ({ 
+                    ...prevState, 
+                    message: text, chatStlye: 2 
+                }))}
+                paperPlaneSendTouch={() => {
+                    setChats(prevChats => [...prevChats, { message: ChatInformation.message, chatStlye: ChatInformation.chatStlye }]);
+                    setChatInformation({ chatStlye: Chats.length % 2, message: '' });
+                }}
+                />
             </View>
         </KeyboardAvoidingView>
     )
@@ -81,7 +119,9 @@ const styles = StyleSheet.create({
         borderColor: colors.DarkShade,
         borderWidth: 1,
         backgroundColor: colors.LightShade,
-        borderRadius: 20,
-        flex: 1
+        borderRadius: 20
+    },
+    scrollViewStyling:{
+        justifyContent: 'flex-end'
     }
 })

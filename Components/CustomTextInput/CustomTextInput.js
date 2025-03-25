@@ -30,7 +30,7 @@ function CustomTextInput(props) {
               placeholderTextColor={colors.LightShade}
           />
           {props.sendPaperPlane ? (
-            <View style={{position: 'absolute', right: 10, top: 12}} onTouchStart={()=>console.log("sent")}>
+            <View style={{position: 'absolute', right: 10, top: 12}} onTouchStart={props.paperPlaneSendTouch}>
                 <PaperPlaneSimple/>
             </View>
           ) : (<></>)}
