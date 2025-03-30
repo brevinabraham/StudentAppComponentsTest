@@ -6,7 +6,7 @@ import ViewMain from '../CustomView/ViewMain';
 import Add from '../../Images/Add';
 import Eyes from '../../Images/Eyes';
 
-function AddQuestionComponent({ title, inputType = 'default', multiline = false, inputStyles, numberOfLinesPass = 1, aspectRatios = []}) {
+function AddQuestionComponent({ title, inputType = 'default', multiline = false, inputStyles, numberOfLinesPass = 1, aspectRatios = [], handleEyePressed}) {
     const [uploadImages, setUploadImages] = useState(0)
     const [imagesArray, setImagesArray] = useState([])
     const [selectedAspectRatio, setSelectedAspectRatio] = useState(aspectRatios.map(() => false))
@@ -22,9 +22,6 @@ function AddQuestionComponent({ title, inputType = 'default', multiline = false,
             updatedState[index] = !updatedState[index];
             return updatedState;
         });
-    }
-    const handleEyePressed = () => {
-        console.log('eye pressed')
     }
     return (
         <View style={styles.container}>

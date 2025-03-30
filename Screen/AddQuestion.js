@@ -8,17 +8,42 @@ import Button from '../Components/CustomButton/CustomButton';
 import AngleLeft from '../Images/AngleLeft';
 import AddQuestionComponent from '../Components/AddQuestion/AddQuestionComponent';
 import SaveIcon from '../Images/SaveIcon';
+import AspectRatioCard from '../Components/AspectRatioCard/AspectRatioCard';
 
 function AddQuestion ({navigation}) {
     const [saved, setSaved] = useState(false)
+    const [isPreviewVisibile, setIsPreviewVisible] = useState(false)
 
     const handleSaveIconPressed = () => {
         console.log('saved');
         setSaved(!saved)
     }
+    
+    const handleEyePreviewPressed = () => {
+        setIsPreviewVisible(!isPreviewVisibile);
+        console.log(isPreviewVisibile)
+    }
 
     return(
         <ViewMainContainer style={styles.container}>
+            {isPreviewVisibile && 
+                <View style={{position:'absolute', width: '100%', height: '100%', top: 0, left: 0,zIndex: 9999,backgroundColor: 'transparent'}}>
+                        
+                        <ViewMainContainer style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
+                            <AspectRatioCard
+                                title="Title 16/9"
+                                content={["Lorem ipsum occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum","testing this works?", "testing this works? occaecat cupidatat non proident, sunt in culpa qui off"]}
+                                imageUrl="https://picsum.photos/2800/2020"
+                                name="Jane Smith"
+                                dateTime="15 Aug 2024"
+                                ratio={16/9}
+                                containerStyle={{backgroundColor: 'lightgray'}}
+                            />
+                        <Button style={styles.buttonStyle} label={"Close Preview"} labelStyle={{color: colors.DarkShade}} onPress={()=>setIsPreviewVisible(!isPreviewVisibile)}/>
+                        </ViewMainContainer>
+
+                </View>
+            }
             <View style={styles.header}>
                 <TouchableNativeFeedback onPress={()=>navigation.goBack()}>
                     <View>
@@ -40,8 +65,9 @@ function AddQuestion ({navigation}) {
                 <AddQuestionComponent title="Subject"/>
                 <AddQuestionComponent title="Tag"/>
                 <AddQuestionComponent title="Images" inputType='imageUpload' />
-                <AddQuestionComponent title="Choose format of the post" inputType='cardAspectRatio' aspectRatios={[16/9, 1, 4/3, 3]}/>
+                <AddQuestionComponent title="Choose format of the post" inputType='cardAspectRatio' aspectRatios={[16/9, 1, 4/3, 3]} handleEyePressed={handleEyePreviewPressed}/>
             </ViewMain>
+            
             
             <Button style={styles.buttonStyle} label={"POST"} labelStyle={{color: colors.DarkShade}} onPress={()=>navigation.navigate('Dashboard' )}/>
         </ViewMainContainer>
@@ -51,6 +77,9 @@ function AddQuestion ({navigation}) {
 export default AddQuestion
 
 const styles = StyleSheet.create({
+    isPreviewContainer: {
+        
+    },
     container: {
         backgroundColor: colors.LightShade,
         paddingHorizontal: '2%',
