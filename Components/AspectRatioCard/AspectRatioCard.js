@@ -58,7 +58,7 @@ function AspectRatioCard(props) {
                                 style={[styles.imageContainer, { width: cardContentWidth }]}
                             >
                                 <Image
-                                    source={{ uri: imgUrl }}
+                                    source={{ uri: String(imgUrl) }}
                                     style={styles.image}
                                     resizeMode="contain"
                                 />
