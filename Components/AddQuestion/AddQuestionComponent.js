@@ -22,6 +22,7 @@ function AddQuestionComponent({ title, inputType = 'default', multiline = false,
             updatedState[index] = !updatedState[index];
             return updatedState;
         });
+        console.log(selectedAspectRatio)
     }
     return (
         <View style={styles.container}>

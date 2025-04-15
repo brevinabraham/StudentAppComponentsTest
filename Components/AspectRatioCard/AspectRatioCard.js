@@ -77,7 +77,7 @@ function AspectRatioCard(props) {
             <View style={styles.footer}>
                 <View>
                     <TextH3 style={styles.name}>{props.name}</TextH3>
-                    <TextH3 style={styles.dateTime}>{props.dateTime}</TextH3>
+                    <TextH3 style={styles.dateTime}>{new Date(props.dateTime).toDateString()}</TextH3>
                 </View>
                 <PaginationDots totalDots={totalItems} activeDotIndex={activeIndex} />
                 <View style={styles.actions}>

@@ -37,13 +37,13 @@ function AddQuestion ({navigation}) {
             {isPreviewVisibile && 
                 <View style={{position:'absolute', width: '100%', height: '100%', top: 0, left: 0,zIndex: 9999,backgroundColor: 'transparent'}}>
                         
-                        <ViewMainContainer style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
+                        <ViewMainContainer style={{backgroundColor: 'rgba(0, 0, 0, 0.5)',borderRadius: 20}}>
                             <AspectRatioCard
                                 title={addQuestionForm.title}
                                 content={addQuestionForm.content}
                                 imageUrl=""
                                 name="Jane Smith"
-                                dateTime={addQuestionForm.dateTime.toLocaleString()}
+                                dateTime={addQuestionForm.dateTime}
                                 ratio={16/9}
                                 containerStyle={{backgroundColor: 'lightgray'}}
                             />
