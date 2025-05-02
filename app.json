@@ -1,8 +1,14 @@
 {
   "expo": {
     "name": "StudentApp-FrontEnd",
-    "slug": "StudentApp-FrontEnd",
+    "slug": "studenthubconnected",
     "version": "1.0.0",
-    "newArchEnabled": true
+    "newArchEnabled": true,
+    "extra": {
+      "eas": {
+        "projectId": "4f6aa50e-48b2-49fb-bd18-68e1b5dc03c9"
+      }
+    },
+    "owner": "brevinabraham"
   }
 }
