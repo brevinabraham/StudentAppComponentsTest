@@ -13,6 +13,7 @@ import AspectRatioCard from '../Components/AspectRatioCard/AspectRatioCard';
 function AddQuestion ({navigation}) {
     const [saved, setSaved] = useState(false)
     const [isPreviewVisibile, setIsPreviewVisible] = useState(false)
+    const [addQuestionForm,setAddQuestionForm] = useState({title: '', content: '', subject: '', tag: '', images: '', format: '', dateTime: {}})
 
     const handleSaveIconPressed = () => {
         console.log('saved');
@@ -21,7 +22,14 @@ function AddQuestion ({navigation}) {
     
     const handleEyePreviewPressed = () => {
         setIsPreviewVisible(!isPreviewVisibile);
-        console.log(isPreviewVisibile)
+    }
+    const handleTitleText = (text) => {
+        setAddQuestionForm(prevState => ({...prevState, title: text, dateTime: Date(Date.now())}));
+        console.log(addQuestionForm)
+    }
+    const handleContentText = (text) => {
+        setAddQuestionForm(prevState => ({...prevState, content: text, dateTime: Date(Date.now())}));
+        console.log(addQuestionForm)
     }
 
     return(
@@ -29,13 +37,13 @@ function AddQuestion ({navigation}) {
             {isPreviewVisibile && 
                 <View style={{position:'absolute', width: '100%', height: '100%', top: 0, left: 0,zIndex: 9999,backgroundColor: 'transparent'}}>
                         
-                        <ViewMainContainer style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
+                        <ViewMainContainer style={{backgroundColor: 'rgba(0, 0, 0, 0.5)',borderRadius: 20}}>
                             <AspectRatioCard
-                                title="Title 16/9"
-                                content={["Lorem ipsum occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum","testing this works?", "testing this works? occaecat cupidatat non proident, sunt in culpa qui off"]}
-                                imageUrl="https://picsum.photos/2800/2020"
+                                title={addQuestionForm.title}
+                                content={addQuestionForm.content}
+                                imageUrl=""
                                 name="Jane Smith"
-                                dateTime="15 Aug 2024"
+                                dateTime={addQuestionForm.dateTime}
                                 ratio={16/9}
                                 containerStyle={{backgroundColor: 'lightgray'}}
                             />
@@ -60,8 +68,8 @@ function AddQuestion ({navigation}) {
                         <SaveIcon fill = {saved ? colors.LightShade: colors.DarkShade} stroke={colors.LightShade}/>
                     </View>
                 </TouchableNativeFeedback>
-                <AddQuestionComponent title="Title"/>
-                <AddQuestionComponent title="Content" multiline={true} inputStyles={{minHeight: 112}} numberOfLinesPass = {5} />
+                <AddQuestionComponent title={"Title"} valueText={addQuestionForm.title} onChangeTextText={(text)=>handleTitleText(text)}/>
+                <AddQuestionComponent title="Content" multiline={true} inputStyles={{minHeight: 112}} numberOfLinesPass = {5} valueText={addQuestionForm.content} onChangeTextText={(text)=>handleContentText(text)}/>
                 <AddQuestionComponent title="Subject"/>
                 <AddQuestionComponent title="Tag"/>
                 <AddQuestionComponent title="Images" inputType='imageUpload' />
